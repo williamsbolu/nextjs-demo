@@ -42,7 +42,7 @@ export async function getStaticProps() {
         id: curMeetup._id.toString()
       })),
     },
-    revalidate: 1, // this is based on our data update frequency. Can be 1 for 1sec or 3600 fro 60 minutes
+    // revalidate: 1, // this is based on our data update frequency. Can be 1 for 1sec or 3600 fro 60 minutes
   };
 }
 
