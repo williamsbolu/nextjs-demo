@@ -36,7 +36,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false,
+    fallback: 'blocking',
     paths: meetups.map((meetup) => (   // path: is an array with an object containing another object with d meetupID
       {params: { meetupId: meetup._id.toString() }}
     ))
@@ -87,3 +87,5 @@ export default MeetupDetails;
 
 // falback -> true: Here nextjs will try to generate a page for the meetupId(supported or unsupported) dynamically on d server for d incoming request,
 // Here our paths does not contain all supported meetupId values, returns a pre-generated page for any value thats not supported with d (paths)
+
+// falback -> blocking:
